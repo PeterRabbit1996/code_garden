@@ -1,0 +1,6 @@
+gcc -c -fno-builtin -m32 tiny_hello.c
+ld -static -e nomain -o tiny_hello tiny_hello.o -m elf_i386
+
+# ld with .lds
+gcc -c -fno-builtin -m32 tiny_hello.c
+ld -static -e nomain -o tiny_hello tiny_hello.o -m elf_i386 -T tiny_hello.lds

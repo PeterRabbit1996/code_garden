@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int (*func_1(int num))(int *, int *)
+{
+
+}
+
+auto func_2(int num) -> int (*)(int *, int *)
+{
+
+}
+
+int main()
+{
+
+	return 0;
+}

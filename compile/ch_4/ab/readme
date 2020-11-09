@@ -1,0 +1,2 @@
+gcc -c -fno-builtin a.c b.c -fno-stack-protector
+ld -static -e main -o ab a.o b.o

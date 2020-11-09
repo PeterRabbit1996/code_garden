@@ -1,0 +1,3 @@
+/Users/yuanyuan/code_farmer/github/code_garden/cmake_demo/CMakeFiles/rebuild_cache.dir
+/Users/yuanyuan/code_farmer/github/code_garden/cmake_demo/CMakeFiles/edit_cache.dir
+/Users/yuanyuan/code_farmer/github/code_garden/cmake_demo/CMakeFiles/demo.dir
