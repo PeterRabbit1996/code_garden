@@ -3,9 +3,14 @@
 
 int main()
 {
-	//printf("%d\n", 1 << 2);
-	char *str = (char *)malloc(sizeof(char) * 1024);
-	printf("sizeof(str) = %lu\n", sizeof(str));
+	int num = 0x1234567;
+
+	// 4--------0100
+	// d--------1101
+	num |= (1 << 15);
+	num |= (1 << 12);
+
+	printf("0x%x\n", num);
 
 	return 0;
 }

@@ -35,10 +35,22 @@ void func_2()
 	cout << "ivct size: " << ivct.size() << endl;
 }
 
+void func_3()
+{
+	vector<string> vec;
+	vec.push_back("abc");
+
+	cout << "vec.size = " << vec.size() << endl;
+
+	if (vec.size() == 0)
+		cout << "error" << endl;
+	else
+		cout << "correct" << endl;
+}
+
 int main()
 {
-	func_1();
-	func_2();
+	func_3();
 
 	return 0;
 }
