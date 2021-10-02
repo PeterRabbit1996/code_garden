@@ -22,3 +22,13 @@ add_executable(sample ${SAMPLE})
 # add depedencies
 target_link_libraries(sdk logger)
 target_link_libraries(sample sdk)
+
+set(INSTALL_HEAD_FILES ./logger/include/logger.h ./sdk/include/sdk.h)
+
+install(FILES ${INSTALL_HEAD_FILES} DESTINATION include)
+install(TARGETS sample sdk logger
+        EXPORT TCTargets
+        LIBRARY DESTINATION lib
+        ARCHIVE DESTINATION lib
+        RUNTIME DESTINATION bin
+        )
