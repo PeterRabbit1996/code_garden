@@ -10,7 +10,7 @@ public:
 	Person();
 	Person(unsigned short age, unsigned short height, unsigned short weight);
 	Person(const Person &p); // copy constructor
-	Person(Person &&p);	 // copy constructor
+	Person(Person &&p);	 // move constructor
 	~Person();
 
 protected:
