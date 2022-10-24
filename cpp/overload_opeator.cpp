@@ -32,8 +32,8 @@ public:
 			return false;
 		}
 
-		if (m_note == NULL && box.m_note == NULL ||
-		    m_note != NULL && box.m_note != NULL && strncmp(m_note, box.m_note, strlen(m_note)))
+		if ((m_note == NULL && box.m_note == NULL) ||
+		    (m_note != NULL && box.m_note != NULL && strncmp(m_note, box.m_note, strlen(m_note))))
 		{
 			return true;
 		}

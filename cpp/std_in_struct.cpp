@@ -23,6 +23,7 @@ public:
 
 			person_list.__emplace_back(person);
 		}
+		return 0;
 	}
 
 private:
