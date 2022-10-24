@@ -1,5 +1,5 @@
 CC        = g++
-CFLAGS    = $(CFLAG) -Wall -pthread -g -std=c++11
+CFLAGS    = $(CFLAG) -Wall -pthread -g -std=c++14
 
 SOURCE_FILES  := $(wildcard ./*.cpp)
 DSYM_FILES    := $(patsubst %.cpp, %.dSYM, $(SOURCE_FILES))
