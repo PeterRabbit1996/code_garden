@@ -3,6 +3,7 @@
 class Base1
 {
 public:
+	void display() { std::cout << typeid(*this).name() << std::endl; };
 	int m_base = 111;
 	int m_num = 11;
 };
@@ -10,6 +11,7 @@ public:
 class Base2
 {
 public:
+	void display() { std::cout << typeid(*this).name() << std::endl; };
 	int m_base = 222;
 	int m_num = 22;
 };
@@ -17,6 +19,7 @@ public:
 class Derive : public Base1, public Base2
 {
 public:
+	void display() { std::cout << typeid(*this).name() << std::endl; };
 	int m_derive = 333;
 	int m_num = 33;
 };
@@ -24,6 +27,7 @@ public:
 void test_1()
 {
 	Derive d;
+	d.display();
 	std::cout << "Base1 : " << d.Base1::m_num << std::endl;
 	std::cout << "Base2 : " << d.Base2::m_num << std::endl;
 	std::cout << "Derive : " << d.m_num << std::endl;
@@ -48,4 +52,3 @@ int main()
 
 	return 0;
 }
-
