@@ -9,6 +9,7 @@ namespace inherit
 		{
 			std::cout << typeid(*this).name() << "constructor" << std::endl;
 		}
+		virtual ~Player() = 0;
 		virtual void self_induc() { std::cout << "this is a Player\n"; }
 		virtual void display() { std::cout << "name = " << name_ << ", age = " << age_ << std::endl; }
 		virtual void display(const std::string &msg) { std::cout << "name = " << name_ << ", age = " << age_ << ", msg = " << msg << std::endl; }
@@ -17,6 +18,10 @@ namespace inherit
 		std::string name_;
 		unsigned short age_;
 	};
+	Player::~Player()
+	{
+		std::cout << "Player destructor..." << std::endl;
+	}
 
 	class SoccorPlayer : public Player
 	{
@@ -32,6 +37,11 @@ namespace inherit
 		virtual void display()
 		{
 			std::cout << "name = " << name_ << ", age = " << age_ << std::endl;
+		}
+
+		~SoccorPlayer()
+		{
+			std::cout << "SoccorPlayer destructor..." << std::endl;
 		}
 
 	private:
@@ -57,6 +67,7 @@ namespace inherit
 	{
 		Player *p = new SoccorPlayer("Messi", 35);
 		p->self_induc();
+		delete p;
 
 		return;
 	}

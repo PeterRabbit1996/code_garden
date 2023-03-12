@@ -3,6 +3,7 @@
 
 using namespace std;
 
+using upf = void(*)(int *, int *);
 static void (*pf)(int *, int *);
 
 class ClassTest

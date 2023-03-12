@@ -127,11 +127,50 @@ void test_3()
 	return;
 }
 
+namespace polymorphism
+{
+	class Base
+	{
+	public:
+		Base(int num, std::string str) : num_(num), str_(str) {}
+		void display()
+		{
+			printf("num = %d, str = %s\n", num_, str_.c_str());
+		}
+
+	protected:
+		int num_;
+		std::string str_;
+	};
+
+	class dervied : public Base
+	{
+	public:
+		dervied(int num, std::string str):Base(num, str)
+		{
+			num_ = num;
+			str_ = str;
+		}
+	};
+
+	void test1()
+	{
+		dervied d(99, "abc");
+		Base b = d;
+		b.display();
+
+		return;
+	}
+
+} // namespace polymorphism
+
 int main()
 {
 	// test_1();
 	// test_2();
 	test_3();
+
+	polymorphism::test1();
 
 	return 0;
 }

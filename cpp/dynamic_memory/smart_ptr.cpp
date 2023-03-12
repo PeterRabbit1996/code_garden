@@ -50,11 +50,47 @@ namespace unique_ptr
 {
 	void test1()
 	{
+		auto ptr1 = std::unique_ptr<TC<std::string, int>>(new TC<std::string, int>(std::string("a"), 1));
+		auto ptr2 = std::move(ptr1);
 
 		return;
 	}
 
 } // namespace unique_ptr
+
+namespace weak_ptr
+{
+	class B;
+	class A
+	{
+	public:
+		A() { std::cout << "A constructor..." << std::endl; }
+		~A() { std::cout << "A destructor..." << std::endl; }
+
+		// std::shared_ptr<B> ptr_a_b;
+		std::weak_ptr<B> ptr_a_b;
+	};
+
+	class B
+	{
+	public:
+		B() { std::cout << "B constructor..." << std::endl; }
+		~B() { std::cout << "B destructor..." << std::endl; }
+
+		// std::shared_ptr<A> ptr_b_a;
+		std::weak_ptr<A> ptr_b_a;
+	};
+
+	void test1()
+	{
+		std::shared_ptr<A> ptra = std::make_shared<A>();
+		std::shared_ptr<B> ptrb = std::make_shared<B>();
+		ptra->ptr_a_b = ptrb;
+		ptrb->ptr_b_a = ptra;
+
+		return;
+	}
+} // namespace weak_ptr
 
 namespace allocator
 {
@@ -72,6 +108,7 @@ int main()
 {
 	sharted_ptr::test1();
 	sharted_ptr::test2();
+	weak_ptr::test1();
 
 	return 0;
 }

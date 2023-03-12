@@ -1,9 +1,9 @@
-CC        = gcc
-CFLAGS    = $(CFLAG) -Wall -std=c99 -pthread -g
+CC        = g++
+CPPFLAGS    = $(CFLAG) -Wall -std=c++11 -pthread -g
 
-SOURCE_FILES  := $(wildcard ./*.c)
-DSYM_FILES    := $(patsubst %.c, %.dSYM, $(SOURCE_FILES))
-TARGETS       := $(patsubst %.c, %, $(SOURCE_FILES))
+SOURCE_FILES  := $(wildcard ./*.cpp)
+DSYM_FILES    := $(patsubst %.cpp, %.dSYM, $(SOURCE_FILES))
+TARGETS       := $(patsubst %.cpp, %, $(SOURCE_FILES))
 
 .PHONY: all start end config compile clean
 
@@ -21,8 +21,8 @@ config:
 
 compile: $(TARGETS)
 
-%: %.c
-	$(CC) $(CFLAGS) $^ -o $@
+%: %.cpp
+	$(CC) $(CPPFLAGS) $^ -o $@
 
 clean:
 	rm -rf $(DSYM_FILES) $(TARGETS)
