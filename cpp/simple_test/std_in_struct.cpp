@@ -21,7 +21,7 @@ public:
 
 			std::cout << "name is " << person->name << std::endl;
 
-			person_list.__emplace_back(person);
+			person_list.emplace_back(person);
 		}
 		return 0;
 	}

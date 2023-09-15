@@ -1,12 +1,21 @@
+#include <filesystem>
 #include <iostream>
-#include <fstream>
 
-using namespace std;
+void listFilesAndDirsRecursive(const std::filesystem::path &path)
+{
+	for (const auto &entry : std::filesystem::directory_iterator(path))
+	{
+		std::cout << entry.path() << std::endl;
+		if (std::filesystem::is_directory(entry))
+		{
+			listFilesAndDirsRecursive(entry.path());
+		}
+	}
+}
 
 int main()
 {
-	ofstream file("cloud_dot.txt");
-
-
+	std::filesystem::path path = ".";
+	listFilesAndDirsRecursive(path);
 	return 0;
 }

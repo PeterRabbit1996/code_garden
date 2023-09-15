@@ -345,6 +345,17 @@ namespace constructor_test
 		CT ct;
 		forwardArgs(ct);
 	}
+
+	void test7()
+	{
+		CT ct = CT();
+		ct = CT();
+	}
+
+	void test8()
+	{
+		CT ct = CT();
+	}
 } // namespace constructor_test
 
 int main()
@@ -361,8 +372,10 @@ int main()
 	// constructor_test::test2();
 	// constructor_test::test3();
 	// constructor_test::test4();
-	constructor_test::test5();
+	// constructor_test::test5();
 	// constructor_test::test6();
+	constructor_test::test7();
+	// constructor_test::test8();
 
 	return 0;
 }

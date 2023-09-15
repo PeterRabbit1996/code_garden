@@ -8,7 +8,7 @@ public:
 	Dog(std::string name, uint8_t age) : name_(name), age_(age) {}
 	void bark(const std::string words)
 	{
-		std::cout << name_ << "said: " << words << std::endl;
+		std::cout << name_ << " age: " << std::to_string(age_) << " said: " << words << std::endl;
 		return;
 	}
 
